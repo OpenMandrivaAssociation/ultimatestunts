@@ -17,6 +17,7 @@ Source: 	http://downloads.sourceforge.net/ultimatestunts/ultimatestunts-srcdata-
 BuildRoot:	%_tmppath/%name-buildroot
 
 BuildRequires:	freealut-devel
+BuildRequires:	GL-devel
 BuildRequires:	openal-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
