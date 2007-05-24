@@ -18,6 +18,7 @@ BuildRoot:	%_tmppath/%name-buildroot
 
 BuildRequires:	freealut-devel
 BuildRequires:	GL-devel
+BuildRequires:	mesaglu-devel
 BuildRequires:	openal-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
