@@ -52,7 +52,6 @@ make \
 mkdir -p %buildroot/%_datadir/applications
 cat > %buildroot/%_datadir/applications/mandriva-%name.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Ultimate Stunts
 Comment=%Summary
 Exec=%_gamesbindir/ustunts
@@ -63,7 +62,6 @@ EOF
 
 cat > %buildroot/%_datadir/applications/mandriva-%name-trackedit.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Ultimate Stunts Track Editor
 Comment=The Ultimate Stunts track editor
 Exec=%_gamesbindir/ustuntstrackedit
