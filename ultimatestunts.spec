@@ -14,7 +14,6 @@ License:	GPL
 Group:  	Games/Arcade
 URL:    	http://www.ultimatestunts.nl/
 Source: 	http://downloads.sourceforge.net/ultimatestunts/ultimatestunts-srcdata-%tarball_version.tar.gz
-BuildRoot:	%_tmppath/%name-buildroot
 
 BuildRequires:	freealut-devel
 BuildRequires:	GL-devel
