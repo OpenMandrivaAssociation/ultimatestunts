@@ -31,9 +31,9 @@ Requires:	libvorbis-devel
 
 %description
 A UNIX/Windows/Linux remake of the DOS car racing game "stunts", providing
-modern features like openGL graphics, 3D sound and internet multiplaying. Design
-your own tracks, choose your opponents and try the most spectacular stunts
-you've ever seen.
+modern features like openGL graphics, 3D sound and internet multiplaying.
+Design your own tracks, choose your opponents and try the most spectacular
+stunts you've ever seen.
 
 %prep
 %setup -q -n ultimatestunts-srcdata-%tarball_version
