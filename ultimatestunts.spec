@@ -84,11 +84,15 @@ EOF
 find %buildroot/%_gamesdatadir/ultimatestunts -type d -name CVS -print0 | \
 	xargs -0 rm -rf
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %buildroot
