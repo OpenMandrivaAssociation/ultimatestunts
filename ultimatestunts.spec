@@ -1,6 +1,6 @@
 # Basic macros
 %define version 0.7.4.1
-%define release %mkrel 1
+%define release %mkrel 3
 %define tarball_version %(echo %version | sed -e 's/\\.//g')
 
 %define Summary Remake of the DOS racing game "stunts"
