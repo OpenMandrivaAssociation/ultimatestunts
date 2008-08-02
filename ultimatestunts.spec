@@ -1,6 +1,6 @@
 # Basic macros
-%define version 0.7.4.1
-%define release %mkrel 3
+%define version 0.7.5.1
+%define release %mkrel 1
 %define tarball_version %(echo %version | sed -e 's/\\.//g')
 
 %define Summary Remake of the DOS racing game "stunts"
@@ -16,13 +16,13 @@ Source0: 	http://downloads.sourceforge.net/ultimatestunts/ultimatestunts-srcdata
 Source1:	%{name}.png
 BuildRoot:	%_tmppath/%name-buildroot
 
+BuildRequires:	bison
 BuildRequires:	freealut-devel
 BuildRequires:	GL-devel
 BuildRequires:	mesaglu-devel
 BuildRequires:	openal-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
-BuildRequires:	bison
 
 Requires(post,postun): desktop-common-data
 # yes, it's strange, but the game looks for libvorbisfile.so, that's why
