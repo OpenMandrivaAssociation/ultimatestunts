@@ -1,5 +1,5 @@
 # Basic macros
-%define version 0.7.5.1
+%define version 0.7.6.1
 %define release %mkrel 3
 %define tarball_version %(echo %version | sed -e 's/\\.//g')
 
