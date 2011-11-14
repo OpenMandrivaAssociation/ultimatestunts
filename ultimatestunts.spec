@@ -1,20 +1,18 @@
 # Basic macros
 %define version 0.7.6.1
-%define release %mkrel 3
+%define release %mkrel 1
 %define tarball_version %(echo %version | sed -e 's/\\.//g')
 
-%define Summary Remake of the DOS racing game "stunts"
-
-Summary:	%Summary
 Name:   	ultimatestunts
-Version:	%version
-Release:	%release
+Summary:	Remake of the DOS racing game "stunts"
+Version:	%{version}
+Release:	%{release}
 License:	GPLv2+
 Group:  	Games/Arcade
 URL:    	http://www.ultimatestunts.nl/
-Source0: 	http://downloads.sourceforge.net/ultimatestunts/ultimatestunts-srcdata-%tarball_version.tar.gz
+Source0: 	http://downloads.sourceforge.net/ultimatestunts/%{name}-srcdata-%{tarball_version}.tar.gz
 Source1:	%{name}.png
-BuildRoot:	%_tmppath/%name-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 BuildRequires:	bison
 BuildRequires:	freealut-devel
@@ -36,44 +34,44 @@ Design your own tracks, choose your opponents and try the most spectacular
 stunts you've ever seen.
 
 %prep
-%setup -q -n ultimatestunts-srcdata-%tarball_version
-sed -i 's|@usdatadir@|%_gamesdatadir/ultimatestunts/|' ultimatestunts.conf.in
+%setup -q -n ultimatestunts-srcdata-%{tarball_version}
+sed -i 's|@usdatadir@|%{_gamesdatadir}/ultimatestunts/|' ultimatestunts.conf.in
 
 %build
 %configure2_5x \
-	--bindir=%_gamesbindir \
-	--datadir=%_gamesdatadir \
+	--bindir=%{_gamesbindir} \
+	--datadir=%{_gamesdatadir} \
 	--disable-rpath
 	
-%make -j1 usdatadir=%_gamesdatadir/ultimatestunts/
+%make -j1 usdatadir=%{_gamesdatadir}/ultimatestunts/
 
 %install
-rm -rf %buildroot
+rm -rf %{buildroot}
 make \
-	DESTDIR=%buildroot \
-	usdatadir=%buildroot/%_gamesdatadir/ultimatestunts \
+	DESTDIR=%{buildroot} \
+	usdatadir=%{buildroot}%{_gamesdatadir}/ultimatestunts \
 	install
 
-mkdir -p %buildroot%_datadir/pixmaps
-install -m 644 %{SOURCE1} %buildroot%_datadir/pixmaps/%{name}.png
+mkdir -p %{buildroot}%{_datadir}/pixmaps
+install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/%{name}.png
 
-mkdir -p %buildroot/%_datadir/applications
-cat > %buildroot/%_datadir/applications/mandriva-%name.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Ultimate Stunts
-Comment=%Summary
-Exec=%_gamesbindir/ustunts
+Comment=%{summary}
+Exec=%{_gamesbindir}/ustunts
 Icon=%{name}
 Terminal=false
 Type=Application
 Categories=Game;ArcadeGame;
 EOF
 
-cat > %buildroot/%_datadir/applications/mandriva-%name-trackedit.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}-trackedit.desktop << EOF
 [Desktop Entry]
 Name=Ultimate Stunts Track Editor
 Comment=The Ultimate Stunts track editor
-Exec=%_gamesbindir/ustuntstrackedit
+Exec=%{_gamesbindir}/ustuntstrackedit
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -81,7 +79,7 @@ Categories=Graphics;3DGraphics;
 EOF
 
 # remove unwanted files
-find %buildroot/%_gamesdatadir/ultimatestunts -type d -name CVS -print0 | \
+find %{buildroot}%{_gamesdatadir}/ultimatestunts -type d -name CVS -print0 | \
 	xargs -0 rm -rf
 
 %if %mdkversion < 200900
@@ -95,7 +93,7 @@ find %buildroot/%_gamesdatadir/ultimatestunts -type d -name CVS -print0 | \
 %endif
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
 
 %files
 %defattr(0755,root,root,0755)
