@@ -21,6 +21,7 @@ BuildRequires:	mesaglu-devel
 BuildRequires:	openal-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
+BuildRequires:	libvorbis-devel
 
 Requires(post,postun): desktop-common-data
 # yes, it's strange, but the game looks for libvorbisfile.so, that's why
