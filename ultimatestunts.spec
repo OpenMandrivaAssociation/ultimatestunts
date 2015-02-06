@@ -4,7 +4,7 @@
 Summary:	Remake of the DOS racing game "stunts"
 Name:		ultimatestunts
 Version:	0.7.7.1
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://www.ultimatestunts.nl/
