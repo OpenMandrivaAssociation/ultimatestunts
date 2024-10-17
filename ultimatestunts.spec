@@ -7,7 +7,7 @@ Version:	0.7.7.1
 Release:	3
 License:	GPLv2+
 Group:		Games/Arcade
-Url:		http://www.ultimatestunts.nl/
+Url:		https://www.ultimatestunts.nl/
 Source0:	http://downloads.sourceforge.net/ultimatestunts/%{name}-srcdata-%{tarball_version}.tar.gz
 Source1:	%{name}.png
 Patch0:		ultimatestunts-0.7.6-gcc-4.7.patch
