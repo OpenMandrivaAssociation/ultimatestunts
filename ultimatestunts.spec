@@ -11,6 +11,11 @@ Url:		https://www.ultimatestunts.nl/
 Source0:	http://downloads.sourceforge.net/ultimatestunts/%{name}-srcdata-%{tarball_version}.tar.gz
 Source1:	%{name}.png
 Patch0:		ultimatestunts-0.7.6-gcc-4.7.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	bison
 BuildRequires:	freealut-devel
 BuildRequires:	pkgconfig(gl)
